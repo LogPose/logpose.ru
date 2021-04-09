@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Салун "Бешеная кобыла"</title>
+</head>
+<body class="my21Game">
+    <div class="game21Head">
+        <div class="logButton" id="logButton"></div>
+    </div>
+    <div class="game21Body">
+        <div class="gameStart" id="gameStart">
+            <P><H2 class="hello">Здравствуй, странник! Зашёл к нам пропустить стаканчик да поиграть? Отлично! Но как нам называть тебя?</H2></P>
+            <input class="nameInput" id="playerNameInput" type="text" maxlength="16">
+            <br>    
+            <div><button class="gameButton1" id="gameButton1">Такое моё имя!</button></div>
+            <br><br><br>
+            <div id="nextStep" class="hide">
+                <div class="nextStep"><p><h2 class="hello">Рад нашей встрече, <span id="playerName"></span>! <br> Сколько ты готов поставить?</p>
+                </h2>
+                <input class="moneyInput" type="number" id="moneyInput" name="Введи сумму, ковбой" min="100" max="1000" step="100" maxlength="4" value="100">
+                <br>
+                <br>
+                <div><button class="moneyButton" id="moneyButton">И не пенни больше!</button></div>
+            </div>
+            <br><br>
+            <div><button class="startGameButton" id="startGameButton">Начнём игру!</button></div>
+        </div>
+        </div>
+        <div class="gameBody hide" id="gameBody">
+            <div class="croupier" id="croupier"><img class="hide" id="betImage" src="Game21/players/croupier.png">
+                <img class="hide" id="moneyGone" src="Game21/moneyGone.png">
+                <img class="hide" id="lowMoney" src="Game21/lowMoney.png">
+                <img class="hide" id="noBotMoney" src="Game21/noBotMoney.png">
+                <img class="hide" id="welcome" src="Game21/welcome.png">
+                <img class="hide" id="getBetImage" src="Game21/getBetImage.png">
+                <img class="hide" id="gamerWin" src="Game21/gamerWin.png">
+                <img class="hide" id="dirtyWin" src="Game21/dirtyWin.png">
+                <img class="hide" id="cleanWin" src="Game21/cleanWin.png">
+                <img class="hide" id="draw" src="Game21/draw.png">
+                    <div class="bank hide" id="bank">
+                    <h3 class="hide">Сумма на кону: <br> <h1 class="hide"><span id="part"></span></h1></h3>
+                    <img id="betThirty" class="betThiry hide" src="Game21/betThirty.png">
+                    <img id="bet150" class="bet150 hide" src="Game21/bet150.png">
+                    <img id="bet300" class="bet300 hide" src="Game21/bet300.png">
+                    <img id="bet1500" class="bet1500 hide" src="Game21/bet1500.png"> 
+                </div>
+            </div>
+            <div class="bet" id="bet">
+                <button class="betTen" id="betTen">10</button>
+                <button class="betFifty" id="betFifty">50</button>
+                <button class="betOneHundred" id="betOneHundred">100</button>
+                <button class="betFiveHundred" id="betFiveHundred">500</button>
+                <br>
+                <button class="setBet" id="setBet">Начнём!</button>
+                <br>
+                <button class="stopGame" id="stopGame">С меня достаточно!</button>
+            </div>
+            <div class="gameBar hide" id="gameBar">
+                <h3>У вас <span id="roundScope"></span> очков. <br> Взять ещё карту?</h3> <br>
+                <button class="anotherCard" id="anotherCard">Ещё</button><button class="enough" id="enough">Хватит</button>
+                <button class="newGame hide" id="newGame">Новую партию</button><button class="exit hide" id="exit">Выход</button>
+            </div>
+            <div class="player1avatar" id="player1avatar"><img src="Game21/players/player1avatar.png"></div>
+            <div class="player1" id="player1">
+                <div class="winBoxPlayer1 hide" id="winBoxPlayer1"><img src="Game21/winnerBox.png"></div>
+                <div class="loserBoxPlayer1 hide" id="loserBoxPlayer1"><img src="Game21/loserBox.png"></div>
+                <div class="firstCardBot1 hide" id="firsCardBot1"><img src="Game21/cardBack.png"></div>
+                <div class="secondCardBot1 hide" id="secondCardBot1"><img src="Game21/cardBack.png"></div>
+                <div class="thirdCardBot1 hide" id="thirdCardBot1"><img src="Game21/cardBack.png"></div>
+                <div class="fourthCardBot1 hide" id="fourthCardBot1"><img src="Game21/cardBack.png"></div>
+                <h3>Грязный Гарри<br>$ осталось: <span id="player1score"></span></h2><br><br><br><h3 class="hide" id="firsBotRoundBar">Счёт: <span id="firstBotRoundScope"></span></h3></div>
+            <div class="player" id="player">
+                <div class="winBoxGamer hide" id="winBoxGamer"><img src="Game21/winnerBox.png"></div>
+                <div class="loserBoxGamer hide" id="loserBoxGamer"><img src="Game21/loserBox.png"></div>
+                <div class="firstCardGamer hide" id="firstCardGamer"><img src="Game21/cardBack.png"></div>
+                <div class="secondCardGamer hide" id="secondCardGamer"><img src="Game21/cardBack.png"></div>
+                <div class="thirdCardGamer hide" id="thirdCardGamer"><img src="Game21/cardBack.png"></div>
+                <h3><span id="gamerName"></span><br>$ осталось: <span id="playerScore"></span><br></h2><br><br><br><h3>Счёт: <span id="gamerRoundScope"></span></h3></div>
+            <div class="player2avatar" id="player2avatar"><img src="Game21/players/player2avatar.png"></div>
+            <div class="player2" id="player2">
+                <div class="winBoxPlayer2 hide" id="winBoxPlayer2"><img src="Game21/winnerBox.png"></div>
+                <div class="loserBoxPlayer2 hide" id="loserBoxPlayer2"><img src="Game21/loserBox.png"></div>
+                <div class="firstCardBot2 hide" id="firsCardBot2"><img src="Game21/cardBack.png"></div>
+                <div class="secondCardBot2 hide" id="secondCardBot2"><img src="Game21/cardBack.png"></div>
+                <div class="thirdCardBot2 hide" id="thirdCardBot2"><img src="Game21/cardBack.png"></div>
+                <div class="fourthCardBot2 hide" id="fourthCardBot2"><img src="Game21/cardBack.png"></div>
+                <h3>Чистый Гарри<br>$ осталось: <span id="player2score"></span></h2><br><br><br><h3 class="hide" id="secondBotRoundBar">Счёт: <span id="secondBotRoundScope"></span></h3></div>
+        </div>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="obj.js" type="text/javascript"></script>
+</body>
+</html>
