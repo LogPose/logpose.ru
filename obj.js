@@ -113,14 +113,16 @@ $anotherCard.addEventListener('click', anotherCard)
 $newGame.addEventListener('click', newRound)
 $stopGame.addEventListener('click', stopGame)
 $exit.addEventListener('click', stopGame)
+$logButton.addEventListener('click', function() {
+    location.href = 'index.html'
+})
+
 // Выбор суммы на ставку
 $buttonBetTen.addEventListener('click', betTenRound)
 $buttonBetFifty.addEventListener('click', betFiftyRound)
 $buttonBetOneHundred.addEventListener('click', betOneHudred)
 $buttonBetFiveHundred.addEventListener('click', betFiveHudred)
-$logButton.addEventListener('click', function() {
-    location.href = 'index.html'
-})
+
 
 function stopGame() {
     $gameStart.classList.remove('hide')
@@ -135,6 +137,7 @@ function stopGame() {
     $beginButton.removeAttribute('disabled')
     $moneyGone.classList.add('hide')
     $lowMoney.classList.add('hide')
+    $characterName.value = ('')
     newRound()
 }
 
